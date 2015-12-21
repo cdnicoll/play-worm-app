@@ -7,3 +7,8 @@ This file will be packaged with your application, when using `activator dist`.
 To run application
 cd /server
 activator run
+
+
+To Run Client:
+cd client/
+grunt serve
