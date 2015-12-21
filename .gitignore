@@ -22,7 +22,7 @@ project
 .idea
 *.idea/*
 
-# Java Resources
+# Server Resources
 server/target/
 /server/*.iml
 server/images/
@@ -36,3 +36,10 @@ server/logs
 server/.classpath
 server/.project
 server/RUNNING_PID
+
+# Client side Resources
+client/node_modules
+client/dist
+client/.tmp
+client/.sass-cache
+client/bower_components
