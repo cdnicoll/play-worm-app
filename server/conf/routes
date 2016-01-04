@@ -10,3 +10,8 @@ GET     /client/characters             controllers.Characters.getCharacters
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+# Yeoman routing
+GET     /ui         com.tuplejump.playYeoman.Yeoman.index
+->      /ui/        yeoman.Routes
