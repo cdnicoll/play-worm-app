@@ -3,7 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.WormApplication.showAll()
+GET     /                           controllers.Application.index()
+
+# API Routes
+GET     /client/characters             controllers.Characters.getCharacters
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
