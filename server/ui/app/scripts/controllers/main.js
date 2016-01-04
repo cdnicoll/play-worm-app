@@ -1,17 +1,18 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name uiApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the uiApp
- */
-angular.module('uiApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+;
+(function(angular, _, app) {
+  app = angular.module('wormClientApp.controllers.mainController', []);
+
+  app.controller('MainCtrl', [
+    '$scope',
+    'WormService',
+    function($scope, WormService) {
+      WormService.getHeroById(5).then(function(hero) {
+        console.log(hero);
+      });
+
+    }
+  ]);
+
+}).call(this, angular, _);

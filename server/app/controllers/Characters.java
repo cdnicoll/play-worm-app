@@ -28,8 +28,22 @@ public class Characters extends Controller
             @Override
             public Result apply(WSResponse wsResponse) throws Throwable {
                 JsonNode json = wsResponse.asJson();
-                //return ok(json);
-                return ok(views.html.characters.render());
+                return ok(json);
+                //return ok(views.html.characters.render());
+            }
+        });
+    }
+
+    public Promise<Result> getCharacter(int id)
+    {
+        String webUrl = "http://localhost:8080/api/worm";
+        Promise<WSResponse> characters = WS.url(webUrl + "/" + id).get();
+        return characters.map(new F.Function<WSResponse, Result>() {
+            @Override
+            public Result apply(WSResponse wsResponse) throws Throwable {
+                JsonNode json = wsResponse.asJson();
+                return ok(json);
+                //return ok(views.html.characters.render());
             }
         });
     }

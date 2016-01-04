@@ -1,35 +1,33 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name uiApp
- * @description
- * # uiApp
- *
- * Main module of the application.
- */
-angular
-  .module('uiApp', [
+(function(angular, _, app) {
+  app = angular.module('wormClientApp', [
     'ngAnimate',
-    'ngCookies',
-    'ngResource',
+    'ngCookies', 
+    'ngResource', 
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+    'ngTouch',
+    // Controllers
+    'wormClientApp.controllers.mainController',
+    // Services
+    'wormClientApp.services.WormService'
+  ]);
+
+
+  app.config(function($routeProvider) {
+    $routeProvider.when('/', {
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl',
+      controllerAs: 'MainCtrl'
+    /*
+    }).when('/about', {
+      templateUrl: 'views/about.html',
+      controller: 'AboutCtrl',
+      controllerAs: 'about'
+      */
+    }).otherwise({
+      redirectTo: '/'
+    });
   });
+}).call(this, angular, _);
