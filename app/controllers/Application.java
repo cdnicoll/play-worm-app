@@ -21,7 +21,7 @@ public class Application extends Controller
         config.baseUrl = Play.application().configuration().getString("baseUrl");
         config.googleAnalyticsKey = Play.application().configuration().getString("google.analytics.key");
 
-        return ok(views.html.mainapp.render(config));
+        return ok(views.html.worm.mainapp.render(config));
     }
 
 }

@@ -11,10 +11,18 @@
       var WormApiResource = {};
 
       // @TODO: make configurable
-      var baseURI = CharacterOrganizer.baseUrl+'/client/character';
+      var baseURI = CharacterOrganizer.baseUrl+'/client';
+
+      WormApiResource.getAllHeroes = function() {
+        return $resource(baseURI+'/characters', {}, {
+          query: {
+            method: 'GET', isArray:true
+          }
+        })
+      };
 
       WormApiResource.getHeroById = function() {
-        return $resource(baseURI+'/:heroId', {}, {
+        return $resource(baseURI+'/character/:heroId', {}, {
           get: {
             method: 'GET'
           }
@@ -30,6 +38,10 @@
    */
   app.service('WormService', ['WormApiResource', function(WormApiResource) {
       var WormApi = this;
+
+      WormApi.getAllHeroes = function() {
+        return WormApiResource.getAllHeroes().query().$promise;
+      }
 
       WormApi.getHeroById = function(id) {
         return WormApiResource.getHeroById().get({

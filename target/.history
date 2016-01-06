@@ -16,3 +16,9 @@ grybt
 grunt
 grunt concat
 grunt
+bower install
+grunt
+grunt javascript
+grunt js
+grunt uglify
+grunt

@@ -7,11 +7,17 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/styles/vendor.css")">
     <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/styles/main.css")">
 </head>
 <body ng-app="wormClientApp">
 
 <div class="container" ng-controller="MainCtrl">
+
+    <ul ng-repeat="hero in heroes">
+        <li>{{hero.heroName}}</li>
+        <li>{{hero.description}}</li>
+    </ul>
 
 </div>
 

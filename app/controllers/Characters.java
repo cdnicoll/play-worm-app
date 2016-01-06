@@ -28,7 +28,8 @@ public class Characters extends Controller
             @Override
             public Result apply(WSResponse wsResponse) throws Throwable {
                 JsonNode json = wsResponse.asJson();
-                return ok(json);
+                return ok (wsResponse.getBody());
+                //return ok(json);
                 //return ok(views.html.characters.render());
             }
         });
