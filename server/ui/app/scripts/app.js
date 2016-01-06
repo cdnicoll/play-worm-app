@@ -3,8 +3,8 @@
 (function(angular, _, app) {
   app = angular.module('wormClientApp', [
     'ngAnimate',
-    'ngCookies', 
-    'ngResource', 
+    'ngCookies',
+    'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
@@ -16,18 +16,14 @@
 
 
   app.config(function($routeProvider) {
+    /*
     $routeProvider.when('/', {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl',
       controllerAs: 'MainCtrl'
-    /*
-    }).when('/about', {
-      templateUrl: 'views/about.html',
-      controller: 'AboutCtrl',
-      controllerAs: 'about'
-      */
     }).otherwise({
       redirectTo: '/'
     });
+    */
   });
 }).call(this, angular, _);

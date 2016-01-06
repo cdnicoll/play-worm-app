@@ -11,7 +11,7 @@
       var WormApiResource = {};
 
       // @TODO: make configurable
-      var baseURI = 'http://localhost:9000/client/character';
+      var baseURI = CharacterOrganizer.baseUrl+'/client/character';
 
       WormApiResource.getHeroById = function() {
         return $resource(baseURI+'/:heroId', {}, {

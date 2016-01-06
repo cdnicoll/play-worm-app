@@ -19,4 +19,3 @@ libraryDependencies ++= Seq(
 routesGenerator := InjectedRoutesGenerator
 
 Yeoman.yeomanSettings ++ Yeoman.withTemplates
-

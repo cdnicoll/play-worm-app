@@ -28,6 +28,8 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
+    pkg: grunt.file.readJSON('package.json'),
+
     // Project settings
     yeoman: appConfig,
 
@@ -220,16 +222,16 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/scripts/{,*/}*.js',
-          '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/styles/fonts/*'
+//          '<%= yeoman.dist %>/scripts/{,*/}*.js',
+//          '<%= yeoman.dist %>/styles/{,*/}*.css',
+//          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+//          '<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
     },
@@ -283,18 +285,49 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
+//     uglify: {
+//       dist: {
+//         files: {
+//           '<%= yeoman.dist %>/scripts/scripts.js': [
+//             '<%= yeoman.dist %>/scripts/scripts.js'
+//           ]
+//         }
+//       }
+//     },
+//     concat: {
+//       dist: {}
+//     },
+      uglify: {
+        options: {
+          banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+        },
+        build: {
+          files: {
+            //'dist/js/wormjs.min.js': 'app/scripts/**/*.js'
+          }
+        }
+      },
+
+      concat: {
+        dist: {
+          files: {
+            'dist/js/angularlib.min.js': [
+              'bower_components/angular/*.min.js',
+              'bower_components/angular-animate/*.min.js',
+              'bower_components/angular-cookies/*.min.js',
+              'bower_components/angular-resource/*.min.js',
+              'bower_components/angular-route/*.min.js',
+              'bower_components/angular-sanitize/*.min.js',
+              'bower_components/angular-touch/*.min.js',
+              'bower_components/js/*.js',
+              'bower_components/lodash/*.min.js',
+              'bower_components/underscore.string/js/*.min.js'
+             ],
+             'dist/js/wormjs.min.js': 'app/scripts/**/*.js'
+          }
+        }
+      },
+
 
     imagemin: {
       dist: {
@@ -437,7 +470,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'postcss:server',
-      'connect:livereload',
+      //'connect:livereload',
       'watch'
     ]);
   });
@@ -453,7 +486,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'postcss',
     'connect:test',
-    'karma'
+    //'karma'
   ]);
 
   grunt.registerTask('build', [
@@ -470,8 +503,8 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'filerev',
-    'usemin',
-    'htmlmin'
+    'usemin' /*,
+    'htmlmin' */
   ]);
 
   grunt.registerTask('default', [
