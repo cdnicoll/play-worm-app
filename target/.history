@@ -22,3 +22,9 @@ grunt javascript
 grunt js
 grunt uglify
 grunt
+yo angular
+yo
+cd ..
+exit
+yo angular
+grunt

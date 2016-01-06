@@ -1,0 +1,23 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+body {
+  padding: 0;
+}
+
+.hero-container {
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  padding: 20px 10px;
+  margin: 20px 0px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1024px;
+  }
+}

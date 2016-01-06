@@ -14,10 +14,14 @@
 
 <div class="container" ng-controller="MainCtrl">
 
-    <ul ng-repeat="hero in heroes">
-        <li>{{hero.heroName}}</li>
-        <li>{{hero.description}}</li>
-    </ul>
+    <div class="hero-container" ng-repeat="hero in heroes">
+        <ul>
+            <li>Hero Name: {{hero.heroName}}</li>
+            <li>Sreet Name: {{hero.streetName}}</li>
+        </ul>
+        <p>Faction: {{hero.factionId}}</p>
+        <p>Description: {{hero.description}}</p>
+    </div>
 
 </div>
 
