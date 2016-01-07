@@ -1,23 +1,24 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "gridle/sass/gridle/_gridle.scss";
 // endbower
+
+// generate classes :
+@include gridle_generate_classes ( );
+
+// import settings :
+@import 'settings';
+@import 'worm-main';
+@import 'grid';
 
 
 body {
   padding: 0;
 }
 
-.hero-container {
-  border: 1px solid #d9d9d9;
-  border-radius: 6px;
-  padding: 20px 10px;
-  margin: 20px 0px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 1024px;
-  }
+// manage container width :
+.container {
+    max-width : 960px;
+    margin : 0 auto;
 }

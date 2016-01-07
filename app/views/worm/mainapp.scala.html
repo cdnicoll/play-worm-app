@@ -14,16 +14,63 @@
 
 <div class="container" ng-controller="MainCtrl">
 
-    <div class="hero-container" ng-repeat="hero in heroes">
-        <ul>
-            <li>Hero Name: {{hero.heroName}}</li>
-            <li>Sreet Name: {{hero.streetName}}</li>
-        </ul>
-        <p>Faction: {{hero.factionId}}</p>
-        <p>Description: {{hero.description}}</p>
+    Search: <input type="text" ng-model="heroSearchText" name="heroSearchText">
+
+    <!--
+    <div class="gr-12" id="header">
+        I'm the header, 12 columns width
+    </div>
+    <div class="gr-8 gr-12@@mobile" id="content">
+        I'm the content, 8 columns width, but 12 on mobile
+    </div>
+    <div class="gr-4 gr-12@@mobile" id="sidebar">
+        I'm the sidebar, 4 columns width, but 12 on mobile
+    </div>
+    -->
+
+
+    <div class="rw3" ng-repeat="hero in heroes | filter:heroSearchText">
+        <div class="hero-selector" ng-click="selectHero(hero)">
+            {{hero.heroName}}
+        </div>
+        <!--<div class="rw12" ng-show="showContent(hero)">-->
+        <div class="rw12" ng-show="selectedHero == hero">
+            <p><strong>Street Name:</strong> {{hero.streetName}}</p>
+            <p><strong>Description:</strong> {{hero.description}}</p>
+        </div>
     </div>
 
+
+    <!--
+    selectedHero == hero
+    <div class="hero-selector">row1</div>
+    <div class="hero-detail">drawer 1</div>
+
+    <div class="hero-selector">row1</div>
+    <div class="hero-detail">drawer 1</div>
+
+    <div class="hero-selector">row1</div>
+    <div class="hero-selector">row1</div>
+    <div class="hero-detail">drawer 1</div>
+    <div class="hero-selector">row2</div>
+    <div class="hero-selector">row2</div>
+    <div class="hero-selector">row2</div>
+    <div class="hero-selector">row2</div>
+    <div class="hero-detail">drawer 2</div>
+    -->
+
 </div>
+
+<!--
+<div class="hero-container" ng-repeat="hero in heroes">
+    <ul>
+        <li>Hero Name: {{hero.heroName}}</li>
+        <li>Sreet Name: {{hero.streetName}}</li>
+    </ul>
+    <p>Faction: {{hero.factionId}}</p>
+    <p>Description: {{hero.description}}</p>
+</div>
+-->
 
 <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -33,11 +80,13 @@
 
        ga('create', "@config.googleAnalyticsKey");
        ga('send', 'pageview');
+
 </script>
 
 <script>
     var CharacterOrganizer = CharacterOrganizer || {};
     CharacterOrganizer.baseUrl = "@config.baseUrl"
+
 </script>
 
 <script src="@routes.Assets.versioned("javascripts/js/angularlib.min.js")"></script>

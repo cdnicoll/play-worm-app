@@ -1,0 +1,56 @@
+// import settings :
+@import 'settings';
+
+#header {
+    @include gridle_grid ( 12 );
+    border: 1px solid black
+}
+#content {
+    @include gridle_grid ( 8 );
+    @include gridle_state ( mobile ) {
+        @include gridle_grid ( 12 );
+    }
+    border: 1px solid red;
+}
+#sidebar {
+    // sidebar will make 4 columns width
+    @include gridle_grid ( 4 );
+    background : yellow ;
+
+    // update sidebar look and feel for mobile and tablet
+    @include gridle_state (  mobile tablet  ) {
+        background : red;
+    }
+}
+
+
+.rw3 {
+  @include gridle_grid(3);
+  @include gridle_state ( mobile ) {
+    @include gridle_grid ( 12 );
+  }
+  border: 1px solid black
+}
+
+.rw12 {
+  @include gridle_grid(12);
+  @include gridle_state ( mobile ) {
+    @include gridle_grid ( 12 );
+  }
+  background: yellow;
+}
+
+/*
+.gr-1on5, .gr-0, .gr-1, .gr-2, .gr-3, .gr-4, .gr-5, .gr-6, .gr-7, .gr-8, .gr-9, .gr-10, .gr-11, .gr-12 {
+  border: 1px solid red;
+  display: inline-block;
+  min-height: 1px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: top;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+*/
