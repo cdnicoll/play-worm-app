@@ -1,5 +1,0 @@
-[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/Users/conicoll/gitrepo/worm/play-worm-app/conf/application.conf,/Users/conicoll/gitrepo/worm/play-worm-app/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/conicoll/gitrepo/worm/play-worm-app/conf/logback.xml,/Users/conicoll/gitrepo/worm/play-worm-app/target/scala-2.11/classes/logback.xml)[0m
-[0m[[0mdebug[0m] [0m	(/Users/conicoll/gitrepo/worm/play-worm-app/conf/prod.conf,/Users/conicoll/gitrepo/worm/play-worm-app/target/scala-2.11/classes/prod.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/conicoll/gitrepo/worm/play-worm-app/conf/routes,/Users/conicoll/gitrepo/worm/play-worm-app/target/scala-2.11/classes/routes)[0m
