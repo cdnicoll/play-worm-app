@@ -41,7 +41,8 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all', 'newer:jscs:all'],
+        //tasks: ['newer:jshint:all', 'newer:jscs:all'],
+        tasks: ['js'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -52,7 +53,8 @@ module.exports = function (grunt) {
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'postcss:server', 'postcss:dist']
+        //tasks: ['compass:server', 'postcss:server']
+        tasks: ['scss']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -531,14 +533,28 @@ module.exports = function (grunt) {
     'ngtemplates',
     'concat',
     'ngAnnotate',
-    'copy:dist',
     'copy:styles',
+    'copy:dist',
     'cdnify',
     'cssmin',
     'uglify',
     'filerev',
-    'usemin' /*,
-    'htmlmin' */
+    'usemin'
+  ]);
+
+  grunt.registerTask('js', [
+    //'clean:dist',
+    'concat',
+    'copy:dist',
+    'uglify'
+  ]);
+
+  grunt.registerTask('scss', [
+    //'clean:dist',
+    'useminPrepare',
+    'concurrent:dist',
+    'copy:styles',
+    'cssmin'
   ]);
 
   grunt.registerTask('default', [
