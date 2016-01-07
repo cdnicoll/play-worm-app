@@ -23,19 +23,19 @@ project
 *.idea/*
 
 # Server Resources
-server/target/
-/server/*.iml
-server/images/
-server/files/
-server/nbactions.xml
-server/*.lic
-server/nb-configuration.xml
-server/0-resources
-server/dependency-reduced-pom.xml
-server/logs
-server/.classpath
-server/.project
-server/RUNNING_PID
+target/
+*.iml
+images/
+files/
+nbactions.xml
+*.lic
+nb-configuration.xml
+0-resources
+dependency-reduced-pom.xml
+logs
+.classpath
+.project
+RUNNING_PID
 
 # Client side Resources
 client/node_modules
