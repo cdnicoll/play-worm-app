@@ -1,4 +1,6 @@
 #!/bin/bash
+
+cd ui
 npm install
 bower install
 grunt --force
