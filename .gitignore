@@ -38,14 +38,9 @@ logs
 RUNNING_PID
 
 # Client side Resources
-client/node_modules
-client/dist
-client/.tmp
-client/.sass-cache
-client/bower_components
-server/node_modules
-server/dist
-server/.tmp
-server/.sass-cache
-server/bower_components
+ui/node_modules
+ui/dist
+ui/.tmp
+ui/.sass-cache
+ui/bower_components
 
