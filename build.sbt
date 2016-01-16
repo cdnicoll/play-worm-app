@@ -1,4 +1,4 @@
-import com.tuplejump.sbt.yeoman.Yeoman
+//import com.tuplejump.sbt.yeoman.Yeoman
 
 name := """play-worm-app"""
 
@@ -18,4 +18,4 @@ libraryDependencies ++= Seq(
 // other, legacy style, accesses its actions statically.
 routesGenerator := InjectedRoutesGenerator
 
-Yeoman.yeomanSettings ++ Yeoman.withTemplates
+//Yeoman.yeomanSettings ++ Yeoman.withTemplates

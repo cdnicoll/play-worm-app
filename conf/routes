@@ -19,5 +19,5 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 
 # Yeoman routing
-GET     /ui         com.tuplejump.playYeoman.Yeoman.index
-->      /ui/        yeoman.Routes
+#GET     /ui         com.tuplejump.playYeoman.Yeoman.index
+#->      /ui/        yeoman.Routes
