@@ -15,6 +15,7 @@ grunt --force
 
 echo '------------ SBT Setup ------------'
 #sudo -u ubuntu rm -rf /home/ubuntu/.sbt/0.13/staging/
+cd ..
 sbt clean compile
 sbt stage
 
