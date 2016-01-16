@@ -2,21 +2,16 @@
 
 cd ui
 echo '------------ NPM Install ------------'
-npm install
+pwd
+
+#npm cache clean
+HOME=../../../users/cdnicoll npm install
 
 echo '------------ bower install ------------'
 bower install
 
 echo '------------ Grunt Force ------------'
 grunt --force
-
-echo '------------ Grunt ------------'
-grunt
-
-echo '------------ Setting up Symlinks ------------'
-cd ..
-ln -s ../../ui/dist/js/ public/javascripts/
-ln -s ../../ui/dist/styles/ public/stylesheets/
 
 # copy the jar
 

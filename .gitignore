@@ -13,7 +13,6 @@ build
 .settings
 .settings/.*
 .project
-project
 *.project
 .buildpath
 *.db
@@ -36,6 +35,8 @@ logs
 .classpath
 .project
 RUNNING_PID
+project/project
+project/target
 
 # Client side Resources
 ui/node_modules
